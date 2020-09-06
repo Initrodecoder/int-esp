@@ -70,6 +70,10 @@ const removeNthNodeFromEnd = (head, n) => {
   currentNode = head
 
   console.log("leftIndex: ",leftIndex)
+
+  // Set the currentNode pointer to the node
+  // before the node being removed from the
+  // list.
   while(leftIndex > 1) {
     currentNode = currentNode.next
     leftIndex--
@@ -81,9 +85,17 @@ const removeNthNodeFromEnd = (head, n) => {
   // is pointing at. jumping ahead one
   // node. the current node in currentNode's
   // next property no longer has anything
-  // referencing, or pointint to, it any more.
+  // referencing, or pointing to, it any more.
   // GC will come along and clean up the
   // memory space for the orphaned node.
+  // This is the pointer swap. Once the 
+  // currentNode pointer is set in the while
+  // loop above we're ready to do the pointer
+  // swap.
+  // The pointer swap is what removes the 
+  // pointer to the specified node therefore 
+  // deleting the node from the list, 
+  // and memory.
   currentNode.next = currentNode.next.next
 
   // all node next pointer properties
