@@ -22,6 +22,7 @@ const removeNthNodeFromEnd = (head, n) => {
   // store reference to head passed into
   // function.
   let currentNode = head
+  // Assumes there's always one node (head).
   let nodeCount = 1
   // calculate how many nodes are in the
   // linked list passed into the function.
